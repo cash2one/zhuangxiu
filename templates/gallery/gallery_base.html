@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block title %}2015装修效果图大全 -漳州装修网{% endblock title %}
+{% block header %}
+    <div class="gallery-header">
+        <div class="container">
+            <div class="gallery-header-left">
+                <ul>
+                    <li class="on"><a href="">回到首页</a></li>
+                    <li><a href="">回到首页</a></li>
+                    <li>回到首页</li>
+                </ul>
+            </div>
+            <div class="gallery-header-right">
+                <ul>
+                    <li>喜讯电话：2121212121</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock header %}
+
+{% block js %}
+    <script type="text/javascript">
+        var gallery_box = $("#gallery-box");
+        var gallery_photo = $("#photo");
+        var GALLERY_BOX_WIDTH = 980;
+        $(function(){
+            photo_adapt();
+            left_right();
+        })
+        function setting_photo_size(imgW, imgH, divW, divH) {
+            var scale = imgW / imgH, scale2 = divW / divH, w, h;
+            scale > scale2 ? (w = divW, h = divW / scale) : (w = scale * divH, h = divH);
+            return {
+                width: w > imgW ? imgW : w,
+                height: h > imgH ? imgH : h
+            }
+        }
+        function photo_adapt(){
+            var height = $(window).height();
+            var gallery_box_height = height - 95;  //导航条高度37，面包屑高度35，div的padding 上下各10，总计80；
+            gallery_box.height(gallery_box_height);
+            var image=new Image();
+            image.onload=function(){
+                var photo_size = setting_photo_size(image.width, image.height, GALLERY_BOX_WIDTH, gallery_box_height);
+                gallery_photo.width(photo_size.width);
+                gallery_photo.height(photo_size.height)
+            }
+            image.src=gallery_photo.attr("src");
+        }
+        function left_right(){
+            $(document).keydown(function(event){
+                //判断当event.keyCode 为37时（即左方面键）
+                //判断当event.keyCode 为39时（即右方面键）
+                var pre_url = $("#pre-photo").val();
+                var next_url = $("#next-photo").val();
+                if(event.keyCode == 37){
+                    location.href = pre_url;
+                }else if (event.keyCode == 39){
+                    location.href = next_url;
+                }
+            })
+        }
+    </script>
+{% endblock js %}
+{% block footer %}{% endblock footer %}

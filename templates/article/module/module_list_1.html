@@ -1,0 +1,20 @@
+{% for article in list %}
+    <li>
+        <a href="{{ article.get_full_url }}">
+            <img width="194" height="120" src="{{ article.thumbnail.194120.url }}">
+        </a>
+        <div class="right-side-box">
+            <div class="box-title">
+                <a href="{{ article.get_full_url }}">{{ article.title }}</a>
+            </div>
+            <div class="box-summary">
+                {{ article.get_clean_content|truncatechars:"40" }}
+            </div>
+            <div class="box-date">
+                {{ article.add_date }}
+            </div>
+        </div>
+    </li>
+{% endfor %}
+
+

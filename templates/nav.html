@@ -1,0 +1,75 @@
+{% load common_tags static %}
+
+<div class="header-top">
+    <div class="container">
+        <div class="header-top-left">
+            <a href="{% show_full_url 'home' %}">漳州装修网</a>|<a href="">漳州装修公司</a>
+        </div>
+        <div class="header-top-right">
+            咨询热线：18205964966
+        </div>
+    </div>
+</div>
+<div class="blank20"></div>
+
+<div class="container">
+    <div class="header-center">
+        <div class="header-logo">
+            <img src="{% static 'images/logo.png' %}" alt="漳州装修网,漳州装修公司" />
+        </div>
+
+        <div class="header-search">
+            <input type="text" class="header-search-input" name="keyword">
+            <input type="submit" value="搜 索" class="header-search-submit" />
+        </div>
+    </div>
+</div>
+<div class="blank0"></div>
+
+<div class="header-bottom">
+    <div class="container">
+        <ul class="header-nav" id="header-nav">
+            <li id="nav-home">
+                <a href="{% show_full_url 'home' %}">首页</a>
+            </li>
+            <li>
+                <a href="">装修预算</a>
+            </li>
+            <li id="nav-images">
+                <a href="{% show_full_url 'gallery:list' %}">装修效果图</a>
+            </li>
+            <li id="nav-buzhou">
+                <a href="{% show_full_url 'buzhou' %}">装修步骤</a>
+            </li>
+
+            <li id="nav-zhishi">
+                <a href="{% show_full_url 'article:index' %}">装修知识</a>
+            </li>
+            <li id="nav-kalendar">
+                <a href="{% show_full_url 'article:index' %}">装修吉日</a>
+            </li>
+            <li>
+                <a href="">装修合同</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="blank20"></div>
+<script type="text/javascript">
+    $(function(){
+        nav_hover();
+        select_nav_active();
+    })
+    function nav_hover(){
+        $("#header-nav li").bind("mouseover", function(){
+            $(this).addClass("on").siblings().removeClass("on");
+        }).bind("mouseout", function(){
+            $(this).removeClass("on");
+        })
+    }
+    function select_nav_active(){
+        var obj = $("#hidden-nav").val();
+        $("#" + obj).addClass("active");
+    }
+</script>
+

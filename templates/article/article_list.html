@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static common_tags %}
+{% block title %}
+    装修知识 | 装修经验 | 装修攻略 - 漳州装修网
+{% endblock title %}
+{% block content %}
+    <input type="hidden" value="nav-zhishi" id="hidden-nav">
+    <div class="container">
+        {% if type %}
+            <ul class="bread">
+                <li><a href="{% show_full_url 'article:index' %}">装修知识</a></li>
+                <li>&gt;&nbsp;&nbsp;{{ type.title }}</li>
+            </ul>
+        {% endif %}
+
+    </div>
+
+    <div class="blank10"></div>
+
+    <div class="container">
+        <div class="left-side">
+            <div class="left-side-title">
+                准备装修
+            </div>
+            <ul>
+                <li><a href="{% show_full_url 'article:list' 'shoufang' %}">收房验房</a></li>
+                <li><a href="{% show_full_url 'article:list' 'sheji' %}">设计阶段</a></li>
+                <li><a href="{% show_full_url 'article:list' 'yusuan' %}">装修预算</a></li>
+                <li><a href="{% show_full_url 'article:list' 'hetong' %}">装修合同</a></li>
+            </ul>
+            <div class="left-side-title">
+                开始装修
+            </div>
+            <ul>
+                <li><a href="{% show_full_url 'article:list' 'chaigai' %}">主体拆改</a></li>
+                <li><a href="{% show_full_url 'article:list' 'shuidian' %}">水电改造</a></li>
+                <li><a href="{% show_full_url 'article:list' 'niwa' %}">泥瓦工程</a></li>
+                <li><a href="{% show_full_url 'article:list' 'chuwei' %}">厨卫工程</a></li>
+                <li><a href="{% show_full_url 'article:list' 'mugong' %}">木工工程</a></li>
+                <li><a href="{% show_full_url 'article:list' 'youqi' %}">油漆工程</a></li>
+                <li><a href="{% show_full_url 'article:list' 'jungong' %}">竣工验收</a></li>
+            </ul>
+            <div class="left-side-title">
+                装修完成
+            </div>
+            <ul>
+                <li><a href="{% show_full_url 'article:list' 'ruanzhuang' %}">软装装饰</a></li>
+                <li><a href="{% show_full_url 'article:list' 'ruzhu' %}">搬家入住</a></li>
+            </ul>
+            <div class="left-side-title">
+                案例展示
+            </div>
+            <ul>
+                <li><a href="{% show_full_url 'article:list' 'chenggong' %}">成功案例</a></li>
+            </ul>
+            <div class="left-side-title">
+                装修百科
+            </div>
+            <ul>
+                <li><a href="{% show_full_url 'article:list' 'huangli' %}">黄历释义</a></li>
+            </ul>
+        </div>
+
+        <div class="right-side">
+            <ul>
+                {% if type %}
+                    {% show_list 'article/module/module_list_1.html' 'article' 'Article' type.short_title '-add_date' 8 %}
+                {% else %}
+                    {% show_list 'article/module/module_list_1.html' 'article' 'Article' 'all' '-add_date' 8 %}
+                {% endif %}
+            </ul>
+            <div class="blank40"></div>
+            <div class="page-box">
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+{% endblock content %}

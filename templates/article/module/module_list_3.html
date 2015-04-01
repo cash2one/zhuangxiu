@@ -1,0 +1,12 @@
+{% for article in list %}
+    <li {% if forloop.counter|divisibleby:"3" %}style="margin-right: 0;"{% endif %}>
+        <a href="{{ article.get_full_url }}" target="_blank">
+            <img width="320" height="200" src="{{ article.thumbnail.320200.url }}">
+        </a>
+        <div class="image-text">
+            <a href="{{ article.get_full_url }}" target="_blank">{{ article.title }}</a>
+        </div>
+    </li>
+{% endfor %}
+
+

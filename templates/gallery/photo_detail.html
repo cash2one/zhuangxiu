@@ -1,0 +1,28 @@
+{% extends 'gallery/gallery_base.html' %}
+{% load gallery_tags common_tags %}
+
+{% block content %}
+    <div class="gallery-content">
+        <div class="container">
+            <div class="gallery-bread">
+                <a href="{% show_full_url 'gallery:list' %}">装修效果图</a>&nbsp;&nbsp;&gt;&nbsp;
+                <a href="" class="red">
+                    点击查看({{ photo.gallery.title }})的其他图片(共{{ photo.gallery.photo_set.all.count }}张)
+                </a>
+
+            </div>
+            <div class="gallery-box" id="gallery-box">
+                <a href="{% generate_filter_url view.kwargs.room view.kwargs.style photo.next_photo.id %}">
+                    <img id="photo" src="{{ photo.image.980600.url }}" alt="点击进入下一页"
+                         title="{% if photo.current_num == photo.total_num %}没有了{% else %}点击进入下一页,支持小键盘→←{% endif %}" />
+                </a>
+            </div>
+
+            <input type="hidden" value="{% generate_filter_url view.kwargs.room view.kwargs.style photo.previous_photo.id %}" id="pre-photo" />
+            <input type="hidden" value="{% generate_filter_url view.kwargs.room view.kwargs.style photo.next_photo.id %}" id="next-photo"/>
+        </div>
+    </div>
+
+{% endblock content %}
+
+

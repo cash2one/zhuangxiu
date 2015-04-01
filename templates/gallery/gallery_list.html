@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load gallery_tags common_tags %}
+
+{% block title %}2015装修效果图大全 -漳州装修网{% endblock title %}
+
+{% block content %}
+    <input type="hidden" id="hidden-nav" value="nav-images" />
+    <div class="container">
+        <div class="image-header">
+            <dl style="border: none;">
+                <dt>空间</dt>
+                <dd><a href="{% show_full_url 'gallery:filter' 'keting' 'all' %}">客厅</a></dd>
+                <dd><a href="{% show_full_url 'gallery:filter' 'chufang' 'all' %}">厨房</a></dd>
+                <dd><a href="{% show_full_url 'gallery:filter' 'woshi' 'all' %}">卧室</a></dd>
+                <dd><a href="{% show_full_url 'gallery:filter' 'canting' 'all' %}">餐厅</a></dd>
+                <dd><a href="{% show_full_url 'gallery:filter' 'yangtai' 'all' %}">阳台</a></dd>
+            </dl>
+            <dl>
+                <dt>风格</dt>
+                <dd><a href="{% show_full_url 'gallery:filter' 'all' 'zhongshi' %}">中式</a></dd>
+                <dd><a href="{% show_full_url 'gallery:filter' 'all' 'oushi' %}">欧式</a></dd>
+                <dd><a href="{% show_full_url 'gallery:filter' 'all' 'jianyue' %}">简约</a></dd>
+                <dd><a href="{% show_full_url 'gallery:filter' 'all' 'xiandai' %}">现代</a></dd>
+            </dl>
+        </div>
+    </div>
+
+    <div class="blank20"></div>
+
+    <div class="container">
+        <ul class="cases">
+            {% for gallery in gallery_list %}
+                <li {% if forloop.counter|divisibleby:"3" %}style="margin-right: 0;"{% endif %}>
+                    <a href="{% generate_gallery_url photo=gallery.get_cover.id %}" target="_blank">
+                        <img src="{{ gallery.get_cover.image.320200.url }}" width="320" height="200" />
+                    </a>
+                    <div class="image-text">
+                        {{ gallery.title|slice:":15" }}
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock content %}

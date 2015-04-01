@@ -1,0 +1,10 @@
+{% for article in list %}
+    <li>
+        <a href="{{ article.get_full_url }}">
+            <img width="121" height="75" src="{{ article.thumbnail.12175.url }}" />
+        </a>
+        <div class="content-module">
+            <a href="{{ article.get_full_url }}">{{ article.title }}</a>
+        </div>
+    </li>
+{% endfor %}

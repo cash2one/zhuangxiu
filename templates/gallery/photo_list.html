@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load gallery_tags common_tags %}
+
+{% block title %}2015装修效果图大全 -漳州装修网{% endblock title %}
+
+{% block content %}
+    <input type="hidden" id="hidden-nav" value="nav-images" />
+    <div class="container">
+        <div class="image-header">
+            <input type="hidden" value="{{ view.kwargs.room }}" id="room">
+            <input type="hidden" value="{{ view.kwargs.style }}" id="style">
+            <dl style="border: none;">
+                <dt>空间</dt>
+                <dd id="keting"><a href="{% show_full_url 'gallery:filter' 'keting' view.kwargs.style %}">客厅</a></dd>
+                <dd id="chufang"><a href="{% show_full_url 'gallery:filter' 'chufang' view.kwargs.style %}">厨房</a></dd>
+                <dd id="woshi"><a href="{% show_full_url 'gallery:filter' 'woshi' view.kwargs.style %}">卧室</a></dd>
+                <dd id="canting"><a href="{% show_full_url 'gallery:filter' 'canting' view.kwargs.style %}">餐厅</a></dd>
+                <dd id="yangtai"><a href="{% show_full_url 'gallery:filter' 'yangtai' view.kwargs.style %}">阳台</a></dd>
+            </dl>
+            <dl>
+                <dt>风格</dt>
+                <dd id="zhongshi"><a href="{% show_full_url 'gallery:filter' view.kwargs.room 'zhongshi' %}">中式</a></dd>
+                <dd id="oushi"><a href="{% show_full_url 'gallery:filter' view.kwargs.room 'oushi' %}">欧式</a></dd>
+                <dd id="jianyue"><a href="{% show_full_url 'gallery:filter' view.kwargs.room 'jianyue' %}">简约</a></dd>
+                <dd id="xiandai"><a href="{% show_full_url 'gallery:filter' view.kwargs.room 'xiandai' %}">现代</a></dd>
+            </dl>
+        </div>
+    </div>
+
+    <div class="blank20"></div>
+
+    <div class="container">
+        <ul class="cases">
+            {% for photo in photo_list %}
+                <li {% if forloop.counter|divisibleby:"3" %}style="margin-right: 0;"{% endif %}>
+                    <a href="{% generate_filter_url view.kwargs.room view.kwargs.style photo.id %}" target="_blank">
+                    <img src="{{ photo.image.320200.url }}" /></a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock content %}
+
+{% block js %}
+    <script type="text/javascript">
+    $(function(){
+        init();
+    })
+    function init(){
+        var room = $("#room").val();
+        var style = $("#style").val();
+        $("#" + room).addClass("active");
+        $("#" + style).addClass("active");
+    }
+    </script>
+{% endblock js %}

@@ -1,0 +1,9 @@
+{% for article in list %}
+    <li>
+        <a href="{{ article.get_full_url }}" target="_blank" title="{{ article.title }}">
+            <img width="640" height="400" src="{{ article.thumbnail.640400.url }}">
+        </a>
+    </li>
+{% endfor %}
+
+

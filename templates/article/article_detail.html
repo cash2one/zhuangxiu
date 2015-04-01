@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static common_tags article_tags %}
+{% block title %}
+    {{ article.title }} -{{ article.type.title }} -漳州装修网
+{% endblock title %}
+
+{% block content %}
+    <input type="hidden" value="nav-zhishi" id="hidden-nav">
+    <div class="container">
+        <ul class="bread">
+            <li><a href="{% show_full_url 'article:index' %}">装修知识</a></li>
+            <li>&gt;&nbsp;&nbsp;<a href="{% show_full_url 'article:list' article.type.short_title %}">{{ article.type.title }}</a></li>
+            <li>&gt;&nbsp;&nbsp;{{ article.title }}</li>
+        </ul>
+    </div>
+
+    <div class="blank20"></div>
+
+    <div class="container">
+        <div class="content">
+            <div class="content-main">
+                <h1>{{ article.title }}</h1>
+                <div class="date">
+                    {{ article.add_date }}
+                    <span style="margin-left: 15px;">来源：<a href="{% show_full_url 'home' %}">漳州装修网</a></span>
+                </div>
+                <div class="article">
+                    {{ article.content|safe }}
+                </div>
+            </div>
+        </div>
+        <div class="content-right">
+            <div class="content-right-wrap">
+                <h4>相关文章推荐</h4>
+                <ul class="content-list">
+                    {% show_article_related 'article/module/module_list_related.html' article.tags 5 %}
+                </ul>
+            </div>
+            <h4>
+
+            </h4>
+        </div>
+    </div>
+{% endblock content %}

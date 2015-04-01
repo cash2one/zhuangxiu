@@ -1,0 +1,206 @@
+{% extends 'base.html' %}
+{% load common_tags article_tags static  %}
+
+{% block content %}
+    <input type="hidden" id="hidden-nav" value="nav-home" />
+    <div class="container">
+        <div class="slider-left">
+            <ul class="slider-left-tab" id="slider-left-tab">
+                <li class="on">
+                    <a href="javascript:void(0);">
+                        免费量房
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        免费设计
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        免费报价
+                    </a>
+                </li>
+            </ul>
+            <script type="text/javascript">
+                $(function(){
+                    click_tab();
+                })
+                function click_tab(){
+                    $("#slider-left-tab li").bind("click", function(){
+                        $(this).addClass("on").siblings().removeClass("on");
+                    })
+                }
+            </script>
+            <div class="blank0"></div>
+            <div class="slider-left-form">
+                <div class="form-text">
+                    10秒钟登记，专业设计师免费为您服务
+                </div>
+                <div class="form-line">
+                    <label class="label">您的称呼</label>
+                    <input class="text" type="text">
+                </div>
+                <div class="form-line">
+                    <label class="label">您的电话</label>
+                    <input class="text" type="text">
+                </div>
+                <div class="form-line">
+                    <select class="select">
+                        <option>相城区</option>
+                        <option>相城区</option>
+                    </select>
+                </div>
+                <div class="form-line">
+                    <input type="button" class="form-btn" value="立即申请">
+                </div>
+
+            </div>
+        </div>
+        <div class="slider-container">
+            <div class="slideBox" id="slideBox">
+                <ul class="items">
+                    {% show_push 'article/module/module_list_huandengpian.html' 'article' 'Article' 'huandengpian' 4 %}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="blank40"></div>
+
+    <div class="container">
+        <div class="index-title">
+            <span>装修注意事项</span>
+            <em>几分钟了解装修注意事项 助您有个满意的家</em>
+        </div>
+        <div class="blank20"></div>
+        <ul class="workflow">
+            <li>
+                <a href="" target="_blank">
+                    量房设计
+                </a>
+            </li>
+            <li>
+                <a href="" target="_blank">
+                    拆除工程
+                </a>
+            </li>
+            <li>
+                <a href="" target="_blank">
+                    水电工程
+                </a>
+            </li>
+            <li>
+                <a href="" target="_blank">
+                    厨卫工程
+                </a>
+            </li>
+            <li>
+                <a href="" target="_blank">
+                    木工工程
+                </a>
+            </li>
+            <li>
+                <a href="" target="_blank">
+                    油漆工程
+                </a>
+            </li>
+            <li>
+                <a href="" target="_blank">
+                    竣工验收
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="blank40"></div>
+
+    <div class="container">
+        <div class="index-title">
+            <span>
+                <a href="{% show_full_url 'gallery:list' %}" target="_blank">装修效果图</a>
+            </span>
+            <em>实用才是装修设计的第一要素</em>
+        </div>
+        <div class="blank20"></div>
+        <div class="images">
+            <div class="image-1">
+                <a href="{% show_full_url 'gallery:filter' 'keting' 'all' %}" target="_blank">
+                    <img width="476" height="320" src="{% static 'images/keting.jpg' %}" />
+                    <div class="image-text">
+                        客厅布置应以宽敞为原则。
+                    </div>
+                </a>
+            </div>
+            <div class="image-2">
+                <a href="{% show_full_url 'gallery:filter' 'chufang' 'all' %}" target="_blank">
+                    <img width="242" height="150" src="{% static 'images/chufang.jpg' %}" />
+                    <div class="image-text">
+                        厨房应追求实用，而非美观。
+                    </div>
+                </a>
+            </div>
+            <div class="image-2">
+                <a href="{% show_full_url 'gallery:filter' 'woshi' 'all' %}" target="_blank">
+                    <img width="242" height="150" src="{% static 'images/woshi.jpg' %}" />
+                    <div class="image-text">
+                        卧室宜用暖色调，力求简单。
+                    </div>
+                </a>
+            </div>
+            <div class="image-3">
+                <a href="{% show_full_url 'gallery:filter' 'canting' 'all' %}" target="_blank">
+                    <img width="242" height="150" src="{% static 'images/canting.jpg' %}" />
+                    <div class="image-text">
+                        餐厅最好是独立的。
+                    </div>
+                </a>
+            </div>
+            <div class="image-3">
+                <a href="{% show_full_url 'gallery:filter' 'yangtai' 'all' %}" target="_blank">
+                    <img width="242" height="150" src="{% static 'images/yangtai.jpg' %}" />
+                    <div class="image-text">
+                        阳台防水很重要。
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="blank40"></div>
+
+    <div class="container">
+        <div class="index-title">
+            <span>成功案例</span>
+            <em>业主满意才是我们的最大成就</em>
+        </div>
+        <div class="blank20"></div>
+        <ul class="cases">
+            {% show_list 'article/module/module_list_3.html' 'article' 'Article' 'chenggong' '-add_date' 6 %}
+        </ul>
+    </div>
+
+    {% include 'links.html' %}
+{% endblock content %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'slider/jquery.slideBox.css' %}" />
+{% endblock css %}
+
+{% block js %}
+    <script src="{% static 'slider/jquery.slideBox.js' %}" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function(){
+            slideBox();
+        })
+        function slideBox(){
+            $('#slideBox').slideBox({
+                duration : 0.3,//滚动持续时间，单位：秒
+                easing : 'linear',//swing,linear//滚动特效
+                delay : 5,//滚动延迟时间，单位：秒
+                hideClickBar : false,//不自动隐藏点选按键
+                clickBarRadius : 10
+            });
+        }
+    </script>
+{% endblock js %}
