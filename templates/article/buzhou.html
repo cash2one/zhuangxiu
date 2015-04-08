@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load static %}
+{% load static common_tags %}
 {% block title %}
     装修步骤_装修流程 －漳州装修网
 {% endblock title %}
@@ -17,9 +17,21 @@
                 <div class="list-content">
                     <img width="420" height="200" />
                     <ul>
-                        <li><a href="">新房验房注意事项</a></li>
-                        <li class="big"><a href="">设计师还是施工队</a></li>
-                        <li><a href="">装修预算</a></li>
+                        <li>
+                            <a href="{% show_full_url 'article:detail' 7 %}" target="_blank">
+                                新房收房验房的流程及注意事项
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% show_full_url 'article:detail' 6 %}" target="_blank">
+                                100平米房子的装修预算是多少
+                            </a>
+                        </li>
+                        <li class="big">
+                            <a href="{% show_full_url 'article:detail' 8 %}" target="_blank">
+                                要不要请设计师，设计师的作用？
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div class="list-header">
@@ -30,7 +42,7 @@
                 <div class="list-content">
                     <img width="420" height="200" />
                     <ul>
-                        <li><a href="http://www.to8to.com/yezhu/list.php?&btype=3&stype=1&s=1">房子装修中的拆改原则</a></li>
+                        <li><a href="">房子装修中的拆改原则</a></li>
                         <li class="big"><a href="">家装中绝对不能碰的9大敏感禁区</a></li>
                         <li><a href="">结构拆改注意事项</a></li>
                     </ul>
@@ -39,7 +51,7 @@
                 <div class="list-content">
                     <img width="420" height="200" />
                     <ul>
-                        <li><a href="http://www.to8to.com/yezhu/list.php?&btype=3&s=1&c=shuidian">水路改造注意事项</a></li>
+                        <li><a href="">水路改造注意事项</a></li>
                         <li class="big"><a href="">水电改造都是大学问</a></li>
                         <li><a href="">结构拆改注意事项</a></li>
                     </ul>
@@ -48,7 +60,7 @@
                 <div class="list-content">
                     <img width="420" height="200" />
                     <ul>
-                        <li><a href="http://www.to8to.com/yezhu/list.php?&btype=3&s=1&c=shuidian">水路改造注意事项</a></li>
+                        <li><a href="">水路改造注意事项</a></li>
                         <li class="big"><a href="">厨卫厨卫厨卫厨卫厨卫厨卫</a></li>
                         <li><a href="">结构拆改注意事项</a></li>
                     </ul>
@@ -57,7 +69,7 @@
                 <div class="list-content">
                     <img width="420" height="200" />
                     <ul>
-                        <li><a href="http://www.to8to.com/yezhu/list.php?&btype=3&s=1&c=shuidian">水路改造注意事项</a></li>
+                        <li><a href="">水路改造注意事项</a></li>
                         <li class="big"><a href="">木工木工木工木工木工木工</a></li>
                         <li><a href="">结构拆改注意事项</a></li>
                     </ul>
@@ -66,7 +78,7 @@
                 <div class="list-content">
                     <img width="420" height="200" />
                     <ul>
-                        <li><a href="http://www.to8to.com/yezhu/list.php?&btype=3&s=1&c=shuidian">水路改造注意事项</a></li>
+                        <li><a href="">水路改造注意事项</a></li>
                         <li class="big"><a href="">油漆油漆油漆油漆油漆</a></li>
                         <li><a href="">结构拆改注意事项</a></li>
                     </ul>
@@ -75,7 +87,7 @@
                 <div class="list-content">
                     <img width="420" height="200" />
                     <ul>
-                        <li><a href="http://www.to8to.com/yezhu/list.php?&btype=3&s=1&c=shuidian">水路改造注意事项</a></li>
+                        <li><a href="">水路改造注意事项</a></li>
                         <li class="big"><a href="">竣工验收竣工验收竣工验收竣工验收</a></li>
                         <li><a href="">结构拆改注意事项</a></li>
                     </ul>
@@ -90,7 +102,7 @@
                 <div class="list-content">
                     <img width="420" height="200" />
                     <ul>
-                        <li><a href="http://www.to8to.com/yezhu/list.php?&btype=3&s=1&c=shuidian">水路改造注意事项</a></li>
+                        <li><a href="">水路改造注意事项</a></li>
                         <li class="big"><a href="">竣工验收竣工验收竣工验收竣工验收</a></li>
                         <li><a href="">结构拆改注意事项</a></li>
                     </ul>

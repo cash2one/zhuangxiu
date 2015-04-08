@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static common_tags article_tags %}
 {% block title %}
-    {{ article.title }} -{{ article.type.title }} -漳州装修网
+    {{ article.title }} -{{ article.type.keyword }} -漳州装修网
 {% endblock title %}
 
 {% block content %}
@@ -25,6 +25,9 @@
                     <span style="margin-left: 15px;">来源：<a href="{% show_full_url 'home' %}">漳州装修网</a></span>
                 </div>
                 <div class="article">
+                    {% comment %}
+                    <p><img src="{{ article.thumbnail.640400.url }}" alt="漳州装修网,漳州装修公司" /></p>
+                    {% endcomment %}
                     {{ article.content|safe }}
                 </div>
             </div>

@@ -1,11 +1,6 @@
 #coding:utf-8
 from django.views.generic import *
 from django.http import Http404
-from django.shortcuts import get_object_or_404
-from django.contrib.contenttypes.models import ContentType
-
-from braces.views import CsrfExemptMixin
-from taggit.models import Tag, TaggedItem
 
 from .models import *
 

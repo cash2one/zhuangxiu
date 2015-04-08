@@ -33,7 +33,7 @@
                 <a href="{% show_full_url 'home' %}">首页</a>
             </li>
             <li>
-                <a href="">装修预算</a>
+                <a href="{% show_full_url 'article:list' 'yusuan' %}">装修预算</a>
             </li>
             <li id="nav-images">
                 <a href="{% show_full_url 'gallery:list' %}">装修效果图</a>
@@ -46,10 +46,10 @@
                 <a href="{% show_full_url 'article:index' %}">装修知识</a>
             </li>
             <li id="nav-kalendar">
-                <a href="{% show_full_url 'article:index' %}">装修吉日</a>
+                <a href="{% show_full_url 'kalendar:index' %}">装修吉日</a>
             </li>
             <li>
-                <a href="">装修合同</a>
+                <a href="{% show_full_url 'article:list' 'hetong' %}">装修合同</a>
             </li>
         </ul>
     </div>

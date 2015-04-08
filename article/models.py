@@ -16,6 +16,7 @@ from common.models import CommonModel
 class Type(models.Model):
     title = models.CharField(u'类型', max_length=40)
     short_title = models.CharField(u'缩写', max_length=20)
+    keyword = models.CharField(u'关键词', max_length=40, blank=True, null=True)
     parent = models.ForeignKey('self', verbose_name=u'父类', blank=True, null=True)
 
     class Meta:

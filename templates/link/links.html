@@ -1,0 +1,13 @@
+{% load common_tags static %}
+
+<div class="links">
+    <div class="container">
+        <div class="links-title">
+            <span class="on">友情链接</span>
+        </div>
+        <div class="links-content">
+            {% show_list 'link/link_module.html' 'link' 'Link' 'all' '-add_date' 50 %}
+        </div>
+    </div>
+</div>
+<div class="blank0"></div>

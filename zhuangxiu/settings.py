@@ -47,6 +47,8 @@ INSTALLED_APPS = (
     'common',
     'article',
     'gallery',
+    'apply',
+    'link',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -156,8 +158,3 @@ THUMBNAIL_ALIASES = {
 }
 
 DEFAULT_FILE_STORAGE = "common.storage.FileStorage"
-
-DEFAULT_IMAGE_URL = ""
-
-# Session timeout (second)
-SESSION_COOKIE_AGE=900

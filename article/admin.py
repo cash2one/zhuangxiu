@@ -24,6 +24,11 @@ class ArticleAdmin(admin.ModelAdmin):
         obj.user = request.user
         obj.save()
 
-admin.site.register(Type)
+
+class TypeAdmin(admin.ModelAdmin):
+    list_display = ('title', 'short_title', 'keyword')
+
+
+admin.site.register(Type, TypeAdmin)
 admin.site.register(Push)
 admin.site.register(Article, ArticleAdmin)
