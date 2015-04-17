@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
 {% load static common_tags article_tags %}
-{% block title %}
-    {{ article.title }} -{{ article.type.keyword }} -漳州装修网
-{% endblock title %}
+{% block title %}{{ article.title }} -{{ article.type.keyword }} -漳州装修网{% endblock title %}
+{% if article.tags %}
+    {% block keywords %}{% for tag in article.tags.all %}{{ tag }},{% endfor %}{% endblock keywords %}
+    {% block description %}{% for tag in article.tags.all %}{{ tag }},{% endfor %}{% endblock description %}
+{% endif %}
 
 {% block content %}
     <input type="hidden" value="nav-zhishi" id="hidden-nav">
@@ -25,16 +27,16 @@
                     <span style="margin-left: 15px;">来源：<a href="{% show_full_url 'home' %}">漳州装修网</a></span>
                 </div>
                 <div class="article">
-                    {% comment %}
-                    <p><img src="{{ article.thumbnail.640400.url }}" alt="漳州装修网,漳州装修公司" /></p>
-                    {% endcomment %}
+                    <p style="border: 1px solid #eee;padding:15px;color:#01af63;">
+                        写在前面的话：文章可能很长，但却是我们从业多年总结归纳的呕心之作。如果实在没耐性，可以看蓝色字和图片吧。
+                    </p>
                     {{ article.content|safe }}
                 </div>
             </div>
         </div>
         <div class="content-right">
             <div class="content-right-wrap">
-                <h4>相关文章推荐</h4>
+                <h4>看过这篇文章的还看过</h4>
                 <ul class="content-list">
                     {% show_article_related 'article/module/module_list_related.html' article.tags 5 %}
                 </ul>

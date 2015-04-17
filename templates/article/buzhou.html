@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 {% load static common_tags %}
-{% block title %}
-    装修步骤_装修流程 －漳州装修网
-{% endblock title %}
+{% block title %}装修步骤_装修流程 －漳州装修网{% endblock title %}
+{% block keywords %}装修步骤,装修流程,漳州装修网{% endblock keywords %}
+{% block description %}装修步骤,装修流程,漳州装修网{% endblock description %}
 
 {% block content %}
     <input type="hidden" id="hidden-nav" value="nav-buzhou" />
@@ -15,7 +15,7 @@
                     </div>
                 </div>
                 <div class="list-content">
-                    <img width="420" height="200" />
+                    <img width="420" height="200" src="{% static 'images/1.jpg' %}" />
                     <ul>
                         <li>
                             <a href="{% show_full_url 'article:detail' 7 %}" target="_blank">
@@ -40,25 +40,21 @@
                     </div>
                 </div>
                 <div class="list-content">
-                    <img width="420" height="200" />
+                    <img width="420" height="200" src="{% static 'images/2.jpg' %}" />
                     <ul>
-                        <li><a href="">房子装修中的拆改原则</a></li>
-                        <li class="big"><a href="">家装中绝对不能碰的9大敏感禁区</a></li>
-                        <li><a href="">结构拆改注意事项</a></li>
+                        <li class="big"><a href="{% show_full_url 'article:detail' 10 %}" target="_blank">墙体拆改的注意事项</a></li>
                     </ul>
                 </div>
 
                 <div class="list-content">
-                    <img width="420" height="200" />
+                    <img width="420" height="200" src="{% static 'images/3.jpg' %}" />
                     <ul>
-                        <li><a href="">水路改造注意事项</a></li>
-                        <li class="big"><a href="">水电改造都是大学问</a></li>
-                        <li><a href="">结构拆改注意事项</a></li>
+                        <li class="big"><a href="{% show_full_url 'article:detail' 9 %}" target="_blank">水电改造的流程及注意事项</a></li>
                     </ul>
                 </div>
 
                 <div class="list-content">
-                    <img width="420" height="200" />
+                    <img width="420" height="200" src="{% static 'images/4.jpg' %}" />
                     <ul>
                         <li><a href="">水路改造注意事项</a></li>
                         <li class="big"><a href="">厨卫厨卫厨卫厨卫厨卫厨卫</a></li>
@@ -67,7 +63,7 @@
                 </div>
 
                 <div class="list-content">
-                    <img width="420" height="200" />
+                    <img width="420" height="200" src="{% static 'images/5.jpg' %}" />
                     <ul>
                         <li><a href="">水路改造注意事项</a></li>
                         <li class="big"><a href="">木工木工木工木工木工木工</a></li>
@@ -76,7 +72,7 @@
                 </div>
 
                 <div class="list-content">
-                    <img width="420" height="200" />
+                    <img width="420" height="200" src="{% static 'images/6.jpg' %}" />
                     <ul>
                         <li><a href="">水路改造注意事项</a></li>
                         <li class="big"><a href="">油漆油漆油漆油漆油漆</a></li>
@@ -85,7 +81,16 @@
                 </div>
 
                 <div class="list-content">
-                    <img width="420" height="200" />
+                    <img width="420" height="200" src="{% static 'images/7.jpg' %}" />
+                    <ul>
+                        <li><a href="">水路改造注意事项</a></li>
+                        <li class="big"><a href="">竣工验收竣工验收竣工验收竣工验收</a></li>
+                        <li><a href="">结构拆改注意事项</a></li>
+                    </ul>
+                </div>
+
+                <div class="list-content">
+                    <img width="420" height="200" src="{% static 'images/8.jpg' %}" />
                     <ul>
                         <li><a href="">水路改造注意事项</a></li>
                         <li class="big"><a href="">竣工验收竣工验收竣工验收竣工验收</a></li>
@@ -100,7 +105,7 @@
                 </div>
 
                 <div class="list-content">
-                    <img width="420" height="200" />
+                    <img width="420" height="200" src="{% static 'images/9.jpg' %}" />
                     <ul>
                         <li><a href="">水路改造注意事项</a></li>
                         <li class="big"><a href="">竣工验收竣工验收竣工验收竣工验收</a></li>

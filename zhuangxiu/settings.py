@@ -1,3 +1,4 @@
+#coding:utf-8
 """
 Django settings for zhuangxiu project.
 
@@ -158,3 +159,13 @@ THUMBNAIL_ALIASES = {
 }
 
 DEFAULT_FILE_STORAGE = "common.storage.FileStorage"
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+#邮件配置
+EMAIL_HOST = 'smtp.qq.com'                   #SMTP地址
+EMAIL_PORT = 25                                 #SMTP端口
+EMAIL_HOST_USER = '598562755@qq.com'       #我自己的邮箱
+EMAIL_HOST_PASSWORD = 'Chenwenlin123'                  #我的邮箱密码
+EMAIL_SUBJECT_PREFIX = u'[漳州装修网]'            #为邮件Subject-line前缀,默认是'[django]'
+EMAIL_USE_TLS = True                             #与SMTP服务器通信时，是否启动TLS链接(安全链接)。默认是false

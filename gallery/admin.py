@@ -29,7 +29,7 @@ class InlinePhotoAdmin(admin.TabularInline):
 class GalleryAdmin(admin.ModelAdmin):
     fieldsets = (
         (None, {
-            'fields': ('title', 'describe', 'tags')
+            'fields': ('title', 'describe')
         }),
         (u'高级选项',{
             'classes': ('collapse',),

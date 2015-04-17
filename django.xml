@@ -1,0 +1,7 @@
+<uwsgi>
+    <master>true</master>
+    <socket>127.0.0.1:9322</socket>
+    <chdir>/root/web/zhuangxiu</chdir>
+    <pythonpath>..</pythonpath>
+    <module>wsgi</module>
+</uwsgi>

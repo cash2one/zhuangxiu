@@ -493,6 +493,9 @@ button, input, select, textarea {
     color: #222;
     text-indent: 2em;
 }
+.content-main .article hr{
+    margin: 3em 2em;
+}
 .content-right{
     float: left;
     width: 258px;
@@ -500,14 +503,14 @@ button, input, select, textarea {
 }
 .content-right-wrap{
     width: 234px;
-padding: 10px 12px 7px 12px;
+    padding: 10px 12px 7px 12px;
 }
 .content-right h4{
     font-size: 14px;
-color: #666;
-height: 16px;
-line-height: 16px;
-margin-bottom: 10px;
+    color: #666;
+    height: 16px;
+    line-height: 16px;
+    margin-bottom: 10px;
 }
 .content-list li{
     margin-bottom: 10px;
@@ -631,8 +634,8 @@ margin-bottom: 10px;
 .gallery-header{
     height: 35px;
     line-height: 35px;
-  background: #fff;
-  border-bottom: 2px solid #00af63;
+    background: #fff;
+    border-bottom: 2px solid #00af63;
 }
 .gallery-header-left{
     float: left;
@@ -668,7 +671,7 @@ margin-bottom: 10px;
 .gallery-box{
     background-color: #fff;
     text-align: center;
-      padding: 10px;
+    padding: 10px;
 }
 .gallery-left{
     float: left;

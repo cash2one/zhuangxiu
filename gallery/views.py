@@ -1,8 +1,6 @@
 #coding:utf-8
-from django.shortcuts import render
 from django.views.generic import *
 
-from common.mixins import AddPageViewMixin
 from .models import *
 
 
@@ -38,7 +36,7 @@ class GalleryListView(ListView):
         return gallery
 
 
-class GalleryDetailView(AddPageViewMixin, DetailView):
+class GalleryDetailView(DetailView):
     model = Photo
     template_name = 'gallery/gallery_detail.html'
 
@@ -65,7 +63,7 @@ class PhotoListView(ListView):
         return photo_list
 
 
-class PhotoDetailView(AddPageViewMixin, DetailView):
+class PhotoDetailView(DetailView):
     model = Photo
 
     def get_object(self, queryset=None):
